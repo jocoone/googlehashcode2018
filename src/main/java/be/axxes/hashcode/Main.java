@@ -73,6 +73,7 @@ public class Main {
         service.setCars(cars);
 
         while (step < steps) {
+            final int finalStep = step;
             for (Car car : service.getCars()) {
                 car.decreaseRideLength();
             }
@@ -82,21 +83,38 @@ public class Main {
                     .collect(Collectors.toList());
             for (Car car : availableCars) {
                 if (car.isAvailable()) {
+
+                    List<Ride> shortList = new ArrayList<>();
+
                     for (Ride ride : filteredRides) {
                         if (ride.isNotCompleted()) {
                             int length = car.getCurrentPosition().calculateDistance(ride.getStart()) + ride.getStart().calculateDistance(ride.getStop());
                             if (steps - step < length || ride.getLatestArrival() < (step - length)) {
                                 ride.setNotCompleted(false);
-                                break;
                             }
                             int result = length - ride.getEarliestStart();
 
                             if (result <= ride.getLatestArrival()) {
-                                service.assignToCar(ride, car);
-                                break;
+                                // service.assignToCar(ride, car);
+                                shortList.add(ride);
+                                /*
+                                if (shortList.size() > filteredRides.size() / 5) {
+                                    break;
+                                }
+                                */
                             }
                         }
                     }
+
+                    if (shortList.size() > 0) {
+                        Ride bonusRide = shortList.stream().filter(ride1 -> ride1.getEarliestStart() == finalStep + car.getCurrentPosition().calculateDistance(ride1.getStart())).findFirst().orElse(null);
+                        if (bonusRide == null) {
+                            shortList.sort(Comparator.comparingInt(o -> o.getStart().calculateDistance(o.getStop())));
+                            bonusRide = shortList.get(shortList.size() - 1);
+                        }
+                        service.assignToCar(bonusRide, car);
+                    }
+
                 }
             }
 
