@@ -7,6 +7,8 @@ public class Ride {
     private int earliestStart;
     private int latestArrival;
 
+    private boolean completed = false;
+
 
     public Location getStart() {
         return start;
@@ -48,5 +50,13 @@ public class Ride {
                 ", earliestStart=" + earliestStart +
                 ", latestArrival=" + latestArrival +
                 '}';
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }

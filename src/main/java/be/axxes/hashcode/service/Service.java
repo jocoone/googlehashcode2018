@@ -6,6 +6,7 @@ import be.axxes.hashcode.domain.Ride;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Service {
 
@@ -49,7 +50,7 @@ public class Service {
     }
 
     public List<Ride> getRides() {
-        return rides;
+        return rides.stream().filter(Ride::isCompleted).collect(Collectors.toList());
     }
 
     public void setRides(List<Ride> rides) {
