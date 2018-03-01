@@ -18,7 +18,7 @@ public class Car {
     }
 
     public boolean isAvailable() {
-        return available;
+        return lengthOfRide >= 0;
     }
 
     public void setAvailable(boolean available) {
@@ -44,5 +44,15 @@ public class Car {
     public void decreaseRideLength() {
         if (lengthOfRide > 0)
             lengthOfRide--;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "currentPosition=" + currentPosition +
+                ", available=" + available +
+                ", lengthOfRide=" + lengthOfRide +
+                ", rideHistory=" + rideHistory +
+                '}';
     }
 }
