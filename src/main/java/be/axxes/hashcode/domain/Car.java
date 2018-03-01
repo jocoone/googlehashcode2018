@@ -58,6 +58,16 @@ public class Car implements Comparable<Car> {
     }
 
     @Override
+    public String toString() {
+        return "Car{" +
+                "currentPosition=" + currentPosition +
+                ", available=" + available +
+                ", lengthOfRide=" + lengthOfRide +
+                ", rideHistory=" + rideHistory +
+                '}';
+    }
+
+    @Override
     public int compareTo(Car o) {
         return this.getId() - o.getId();
     }
