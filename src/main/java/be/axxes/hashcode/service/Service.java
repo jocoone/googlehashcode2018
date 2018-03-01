@@ -32,5 +32,7 @@ public class Service {
         car.setAvailable(false);
         car.setLengthOfRide(ride.getStart().calculateDistance(ride.getStop()));
 
+        car.getRideHistory().add(ride);
+
     }
 }

@@ -1,11 +1,13 @@
 package be.axxes.hashcode.domain;
 
+import java.util.List;
+
 public class Car {
 
-    Location currentPosition;
-    boolean available;
-
-    int lengthOfRide;
+    private Location currentPosition;
+    private boolean available;
+    private int lengthOfRide;
+    private List<Ride> rideHistory;
 
     public Location getCurrentPosition() {
         return currentPosition;
@@ -29,5 +31,13 @@ public class Car {
 
     public void setLengthOfRide(int lengthOfRide) {
         this.lengthOfRide = lengthOfRide;
+    }
+
+    public List<Ride> getRideHistory() {
+        return rideHistory;
+    }
+
+    public void setRideHistory(List<Ride> rideHistory) {
+        this.rideHistory = rideHistory;
     }
 }
