@@ -50,7 +50,7 @@ public class Service {
     }
 
     public List<Ride> getRides() {
-        return rides.stream().filter(Ride::isCompleted).collect(Collectors.toList());
+        return rides.stream().filter(Ride::isNotCompleted).collect(Collectors.toList());
     }
 
     public void setRides(List<Ride> rides) {
