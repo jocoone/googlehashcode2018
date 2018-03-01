@@ -40,5 +40,19 @@ public class Service {
 
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
 
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public List<Ride> getRides() {
+        return rides;
+    }
+
+    public void setRides(List<Ride> rides) {
+        this.rides = rides;
+    }
 }
