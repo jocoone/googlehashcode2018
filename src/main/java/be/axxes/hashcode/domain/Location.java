@@ -26,4 +26,17 @@ public class Location {
     public void setColumn(int column) {
         this.column = column;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "row=" + row +
+                ", column=" + column +
+                '}';
+    }
+
+
+    public int calculateDistance(Location other) {
+        return Math.abs(other.getColumn() - this.getColumn()) + Math.abs(other.getRow() - this.getRow());
+    }
 }

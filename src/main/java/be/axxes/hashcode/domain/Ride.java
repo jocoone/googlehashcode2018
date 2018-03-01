@@ -39,4 +39,14 @@ public class Ride {
     public void setLatestArrival(int latestArrival) {
         this.latestArrival = latestArrival;
     }
+
+    @Override
+    public String toString() {
+        return "Ride{" +
+                "start=" + start +
+                ", stop=" + stop +
+                ", earliestStart=" + earliestStart +
+                ", latestArrival=" + latestArrival +
+                '}';
+    }
 }
