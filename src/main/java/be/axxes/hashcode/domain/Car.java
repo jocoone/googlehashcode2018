@@ -31,7 +31,7 @@ public class Car implements Comparable<Car> {
     }
 
     public boolean isAvailable() {
-        return available;
+        return lengthOfRide >= 0;
     }
 
     public int getId() {
@@ -66,5 +66,15 @@ public class Car implements Comparable<Car> {
     @Override
     public int compareTo(Car o) {
         return this.getId() - o.getId();
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "currentPosition=" + currentPosition +
+                ", available=" + available +
+                ", lengthOfRide=" + lengthOfRide +
+                ", rideHistory=" + rideHistory +
+                '}';
     }
 }
