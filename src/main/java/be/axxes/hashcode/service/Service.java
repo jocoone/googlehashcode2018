@@ -32,7 +32,7 @@ public class Service {
 
     public void assignToCar(Ride ride, Car car) {
 
-        rides.remove(ride);
+        ride.setNotCompleted(false);
 
         car.setAvailable(false);
         car.setLengthOfRide(ride.getStart().calculateDistance(ride.getStop()));
