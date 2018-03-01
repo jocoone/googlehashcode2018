@@ -36,9 +36,9 @@ public class Main {
         final List<String> e = FileUtils.readLines("e_high_bonus.in");
         parseFile(example, "example.out");
         parseFile(b, "b_should_be_easy.out");
-        parseFile(c, "c_no_hurry.out");
-        parseFile(d, "d_metropolis.out");
-        parseFile(e, "e_high_bonus.out");
+        //parseFile(c, "c_no_hurry.out");
+        //parseFile(d, "d_metropolis.out");
+        //parseFile(e, "e_high_bonus.out");
     }
 
     private static void parseFile(List<String> test, String output) throws IOException {
@@ -71,7 +71,6 @@ public class Main {
             c++;
         }
         service.setCars(cars);
-        Map<Integer, List<Integer>> driven = new HashMap<>();
 
         while (step < steps) {
             for(Car car : service.getCars()) {
