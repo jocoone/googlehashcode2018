@@ -10,6 +10,7 @@ import java.util.List;
 public class Service {
 
     List<Car> cars = new ArrayList<>();
+    List<Ride> rides = new ArrayList<>();
 
 
     public List<Car> getAvailableCars() {
@@ -29,10 +30,15 @@ public class Service {
 
 
     public void assignToCar(Ride ride, Car car) {
+
+        rides.remove(ride);
+
         car.setAvailable(false);
         car.setLengthOfRide(ride.getStart().calculateDistance(ride.getStop()));
 
         car.getRideHistory().add(ride);
 
     }
+
+
 }
