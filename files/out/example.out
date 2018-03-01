@@ -1,4 +1,2 @@
-Ride{start=Location{row=3, column=4}, stop=Location{row=2, column=3}, earliestStart=2, latestArrival=10}
-Ride{start=Location{row=0, column=0}, stop=Location{row=1, column=3}, earliestStart=2, latestArrival=9}
-Ride{start=Location{row=1, column=2}, stop=Location{row=1, column=0}, earliestStart=0, latestArrival=9}
-Ride{start=Location{row=2, column=0}, stop=Location{row=2, column=2}, earliestStart=0, latestArrival=9}
+1 1
+1 2

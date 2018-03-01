@@ -1,13 +1,26 @@
 package be.axxes.hashcode.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Car {
+public class Car implements Comparable<Car> {
 
+    private int id;
     private Location currentPosition;
     private boolean available;
     private int lengthOfRide;
     private List<Ride> rideHistory;
+
+    public Car(int id) {
+        this.rideHistory =new ArrayList<>();
+        this.available = true;
+        this.currentPosition = new Location("0", "0");
+        this.id = id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Location getCurrentPosition() {
         return currentPosition;
@@ -19,6 +32,10 @@ public class Car {
 
     public boolean isAvailable() {
         return available;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setAvailable(boolean available) {
@@ -44,5 +61,10 @@ public class Car {
     public void decreaseRideLength() {
         if (lengthOfRide > 0)
             lengthOfRide--;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return this.getId() - o.getId();
     }
 }

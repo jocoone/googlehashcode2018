@@ -1,12 +1,16 @@
 package be.axxes.hashcode.domain;
 
-public class Ride {
+public class Ride implements Comparable<Ride> {
 
+    private int id;
     private Location start;
     private Location stop;
     private int earliestStart;
     private int latestArrival;
 
+    public int getId() {
+        return id;
+    }
     private boolean notCompleted = true;
 
 
@@ -40,6 +44,15 @@ public class Ride {
 
     public void setLatestArrival(int latestArrival) {
         this.latestArrival = latestArrival;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public int compareTo(Ride o) {
+        return this.getEarliestStart() - o.getEarliestStart();
     }
 
     @Override
