@@ -2,8 +2,8 @@ package be.axxes.hashcode.domain;
 
 public class Location {
 
-    int row;
-    int column;
+    private int row;
+    private int column;
 
 
     public Location(String row, String column) {

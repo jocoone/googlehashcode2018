@@ -61,7 +61,6 @@ public class Car implements Comparable<Car> {
     public String toString() {
         return "Car{" +
                 "currentPosition=" + currentPosition +
-                ", available=" + available +
                 ", lengthOfRide=" + lengthOfRide +
                 ", rideHistory=" + rideHistory +
                 '}';
@@ -72,13 +71,5 @@ public class Car implements Comparable<Car> {
         return this.getId() - o.getId();
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "currentPosition=" + currentPosition +
-                ", available=" + isAvailable() +
-                ", lengthOfRide=" + lengthOfRide +
-                ", rideHistory=" + rideHistory +
-                '}';
-    }
+
 }
