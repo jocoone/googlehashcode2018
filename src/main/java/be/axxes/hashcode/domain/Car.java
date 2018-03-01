@@ -7,13 +7,11 @@ public class Car implements Comparable<Car> {
 
     private int id;
     private Location currentPosition;
-    private boolean available;
     private int lengthOfRide;
     private List<Ride> rideHistory;
 
     public Car(int id) {
         this.rideHistory =new ArrayList<>();
-        this.available = true;
         this.currentPosition = new Location("0", "0");
         this.id = id;
     }
@@ -31,15 +29,11 @@ public class Car implements Comparable<Car> {
     }
 
     public boolean isAvailable() {
-        return lengthOfRide >= 0;
+        return lengthOfRide <= 0;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
     }
 
     public int getLengthOfRide() {
@@ -72,7 +66,7 @@ public class Car implements Comparable<Car> {
     public String toString() {
         return "Car{" +
                 "currentPosition=" + currentPosition +
-                ", available=" + available +
+                ", available=" + isAvailable() +
                 ", lengthOfRide=" + lengthOfRide +
                 ", rideHistory=" + rideHistory +
                 '}';

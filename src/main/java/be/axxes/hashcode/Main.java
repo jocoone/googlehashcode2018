@@ -67,14 +67,14 @@ public class Main {
         List<Car> cars = new ArrayList<>();
         int c = 0;
         while (c < fleet) {
-            cars.add(new Car(c +1));
+            cars.add(new Car(c + 1));
             c++;
         }
         service.setCars(cars);
         Map<Integer, List<Integer>> driven = new HashMap<>();
 
         while (step < steps) {
-            for(Car car : service.getCars()) {
+            for (Car car : service.getCars()) {
                 car.decreaseRideLength();
             }
             List<Car> availableCars = service.getAvailableCars();
@@ -84,6 +84,10 @@ public class Main {
                     for (Ride ride : rideList) {
                         if (ride.isNotCompleted()) {
                             int length = car.getCurrentPosition().calculateDistance(ride.getStart()) + ride.getStart().calculateDistance(ride.getStop());
+                            if (steps - step < length || ride.getLatestArrival() < (step - length)) {
+                                ride.setNotCompleted(false);
+                                break;
+                            }
                             int result = length - ride.getEarliestStart();
 
                             if (result <= ride.getLatestArrival()) {
