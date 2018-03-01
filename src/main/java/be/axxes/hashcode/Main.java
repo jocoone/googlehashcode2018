@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        final List<String> test = FileUtils.readLines("example.in");
-        FileUtils.writeFile(test, "example.out");
+        final List<String> lines = FileUtils.readLines("example.in");
+        FileUtils.writeFile(lines, "example.out");
     }
 }
