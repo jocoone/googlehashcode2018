@@ -1,15 +1,11 @@
 package be.axxes.hashcode.utils;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtils {
+
     private static final String BASE_PATH = System.getProperty("user.dir") + File.separator + "/files/";
 
     public static List<String> readLines(final String file) throws IOException {
@@ -17,7 +13,7 @@ public class FileUtils {
             final List<String> lines = new ArrayList<>();
             String line = br.readLine();
 
-            while(line != null) {
+            while (line != null) {
                 lines.add(line);
                 line = br.readLine();
             }
