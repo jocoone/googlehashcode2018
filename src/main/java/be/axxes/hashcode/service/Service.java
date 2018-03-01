@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Service {
 
-    List<Car> cars = new ArrayList<>();
-    List<Ride> rides = new ArrayList<>();
+    private List<Car> cars;
+    private List<Ride> rides;
 
 
     public List<Car> getAvailableCars() {

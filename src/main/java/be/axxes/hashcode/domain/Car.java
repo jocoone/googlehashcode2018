@@ -40,4 +40,9 @@ public class Car {
     public void setRideHistory(List<Ride> rideHistory) {
         this.rideHistory = rideHistory;
     }
+
+    public void decreaseRideLength() {
+        if (lengthOfRide > 0)
+            lengthOfRide--;
+    }
 }
